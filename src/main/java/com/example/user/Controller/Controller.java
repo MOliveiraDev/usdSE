@@ -16,7 +16,7 @@ public class Controller {
     private UserS userS;
 
     @GetMapping("/register")
-    public String ShowRegisterForms(Model model) {
+    public String ShowFroms(Model model) {
         model.addAttribute("user", new UserM());
         return "register";
     }
