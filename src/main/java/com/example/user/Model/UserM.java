@@ -1,31 +1,45 @@
 package com.example.user.Model;
 
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+
+import java.util.UUID;
 
 public class UserM {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
+    private String name;
     private String email;
     private String password;
 
     public UserM() {
     }
 
-    public UserM(String email, String password) {
+    public UserM(UUID id, String name, String email, String password) {
+        this.id = id;
+        this.name = name;
         this.email = email;
         this.password = password;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
