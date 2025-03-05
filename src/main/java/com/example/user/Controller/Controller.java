@@ -68,4 +68,15 @@ public class Controller {
         userS.UpdatePassword(id, newpassword);
         return "redirect:/user/login";
     }
+
+    @GetMapping("/find-by-email")
+    public String FindByEmail() {
+        return "redirect:/find-by-email";
+    }
+
+    @PostMapping("/find-by-email")
+    public String FindByEmail(@RequestParam String email) {
+        userS.findByEmail(email);
+        return "redirect:/user/login";
+    }
 }
